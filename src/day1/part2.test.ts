@@ -31,9 +31,12 @@ const part2 = (input: string) => {
   return input
     .split("\n")
     .map((item) =>
-      item.trim().replace(new RegExp(NUMBER_KEYS.join("|"), "g"), (match) => {
-        return `${NUMBERS_MAP[match as Key]}${match[match.length - 1]}`;
-      })
+      item
+        .trim()
+        .replace(
+          new RegExp(NUMBER_KEYS.join("|"), "g"),
+          (match) => NUMBERS_MAP[match as Key]
+        )
     )
     .map((item) => item.split("").filter((char) => !isNaN(Number(char))))
     .map((item) => Number(item[0] + item[item.length - 1]))
