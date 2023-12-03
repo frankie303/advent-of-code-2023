@@ -43,9 +43,14 @@ const part2 = (input: string) => {
 describe("2023/day/01/part2", () => {
   it("should work with the example input", () => {
     const input = `two1nine
-    eightwo`;
+    eightwothree
+    abcone2threexyz
+    xtwone3four
+    4nineeightseven2
+    zoneight234
+    7pqrstsixteen`;
     const result = part2(input);
-    expect(result).toEqual(111);
+    expect(result).toEqual(281);
   });
 
   it("should work with the puzzle input", () => {
